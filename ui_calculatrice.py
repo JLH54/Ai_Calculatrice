@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'calculatrice.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -56,10 +56,10 @@ class Ui_MainWindow(object):
         self.RootSquare.setObjectName(u"RootSquare")
         self.RootSquare.setGeometry(QRect(210, 160, 90, 50))
         self.RootSquare.setFont(font)
-        self.PowerOf2 = QPushButton(self.centralwidget)
-        self.PowerOf2.setObjectName(u"PowerOf2")
-        self.PowerOf2.setGeometry(QRect(110, 160, 90, 50))
-        self.PowerOf2.setFont(font)
+        self.Square = QPushButton(self.centralwidget)
+        self.Square.setObjectName(u"Square")
+        self.Square.setGeometry(QRect(110, 160, 90, 50))
+        self.Square.setFont(font)
         self.Divise = QPushButton(self.centralwidget)
         self.Divise.setObjectName(u"Divise")
         self.Divise.setGeometry(QRect(310, 160, 90, 50))
@@ -163,7 +163,7 @@ class Ui_MainWindow(object):
         self.Erase.setText(QCoreApplication.translate("MainWindow", u"<--", None))
         self.fraction.setText(QCoreApplication.translate("MainWindow", u"1/x", None))
         self.RootSquare.setText(QCoreApplication.translate("MainWindow", u"2\u221ax", None))
-        self.PowerOf2.setText(QCoreApplication.translate("MainWindow", u"x2", None))
+        self.Square.setText(QCoreApplication.translate("MainWindow", u"x2", None))
         self.Divise.setText(QCoreApplication.translate("MainWindow", u"/", None))
         self.Multiply.setText(QCoreApplication.translate("MainWindow", u"x", None))
         self.num_7.setText(QCoreApplication.translate("MainWindow", u"7", None))

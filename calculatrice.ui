@@ -145,7 +145,7 @@ hr { height: 1px; border-width: 0; }
      <string>2√x</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="PowerOf2">
+   <widget class="QPushButton" name="Square">
     <property name="geometry">
      <rect>
       <x>110</x>
