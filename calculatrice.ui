@@ -451,7 +451,7 @@ hr { height: 1px; border-width: 0; }
      <string>0</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="PositiveNegative_2">
+   <widget class="QPushButton" name="PositiveNegative">
     <property name="geometry">
      <rect>
       <x>10</x>

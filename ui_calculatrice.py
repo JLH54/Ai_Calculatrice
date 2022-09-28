@@ -128,10 +128,10 @@ class Ui_MainWindow(object):
         self.num_0.setObjectName(u"num_0")
         self.num_0.setGeometry(QRect(110, 400, 90, 50))
         self.num_0.setFont(font2)
-        self.PositiveNegative_2 = QPushButton(self.centralwidget)
-        self.PositiveNegative_2.setObjectName(u"PositiveNegative_2")
-        self.PositiveNegative_2.setGeometry(QRect(10, 400, 90, 50))
-        self.PositiveNegative_2.setFont(font1)
+        self.PositiveNegative = QPushButton(self.centralwidget)
+        self.PositiveNegative.setObjectName(u"PositiveNegative")
+        self.PositiveNegative.setGeometry(QRect(10, 400, 90, 50))
+        self.PositiveNegative.setFont(font1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -180,6 +180,6 @@ class Ui_MainWindow(object):
         self.dot.setText(QCoreApplication.translate("MainWindow", u",", None))
         self.Equal.setText(QCoreApplication.translate("MainWindow", u"=", None))
         self.num_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.PositiveNegative_2.setText(QCoreApplication.translate("MainWindow", u"+/-", None))
+        self.PositiveNegative.setText(QCoreApplication.translate("MainWindow", u"+/-", None))
     # retranslateUi
 

@@ -15,6 +15,8 @@ class MainWindow(QMainWindow):
          self.calc = Calculator()
          self.initUi()
          self.numberEntered = True
+
+         #buttons
          for i in range(0, 10):
              getattr(self.ui, "num_" + str(i)).clicked.connect(self.addNumber)
          self.ui.Plus.clicked.connect(self.plusButton)
@@ -24,9 +26,12 @@ class MainWindow(QMainWindow):
          self.ui.RootSquare.clicked.connect(self.rootSquareButton)
          self.ui.Square.clicked.connect(self.squareButton)
          self.ui.fraction.clicked.connect(self.fractionButton)
+         self.ui.Modulo.clicked.connect(self.moduloButton)
          self.ui.ClearEverything.clicked.connect(self.CEButton)
          self.ui.Clear.clicked.connect(self.clearButton)
          self.ui.Erase.clicked.connect(self.eraseButton)
+         self.ui.dot.clicked.connect(self.dotButton)
+         self.ui.PositiveNegative.clicked.connect(self.PositiveNegativeButton)
          self.setWindowTitle("Calculatrice à Julien")
 
     #.clearHistory(backward()) pour effacer par en arriere
@@ -45,79 +50,79 @@ class MainWindow(QMainWindow):
         self.ui.Montrer.setText(newText)
 
     def plusButton(self):
-        self.number1 = int(self.ui.Montrer.toPlainText())
+        self.number1 = float(self.ui.Montrer.toPlainText())
         self.operand = "+"
         self.ui.Montrer.setText("+")
         self.numberEntered = True
 
     def minusButton(self):
-        self.number1 = int(self.ui.Montrer.toPlainText())
+        self.number1 = float(self.ui.Montrer.toPlainText())
         self.operand = "-"
         self.ui.Montrer.setText("-")
         self.numberEntered = True
 
 
     def multiplyButton(self):
-        self.number1 = int(self.ui.Montrer.toPlainText())
+        self.number1 = float(self.ui.Montrer.toPlainText())
         self.operand = "x"
         self.ui.Montrer.setText("*")
         self.numberEntered = True
+
     def diviseButton(self):
-        self.number1 = int(self.ui.Montrer.toPlainText())
+        self.number1 = float(self.ui.Montrer.toPlainText())
         self.operand = "/"
         self.ui.Montrer.setText("/")
         self.numberEntered = True
+
     def rootSquareButton(self):
-        self.number1 = int(self.ui.Montrer.toPlainText())
+        self.number1 = float(self.ui.Montrer.toPlainText())
         self.operand = "rootSquare"
         #self.ui.Montrer.setText("√")
         self.numberEntered = True
         self.equalButton()
 
     def squareButton(self):
-        self.number1 = int(self.ui.Montrer.toPlainText())
+        self.number1 = float(self.ui.Montrer.toPlainText())
         self.operand = "Square"
-        #self.ui.Montrer.setText("√")
         self.numberEntered = True
         self.equalButton()
+
     def fractionButton(self):
-        self.number1 = int(self.ui.Montrer.toPlainText())
+        self.number1 = float(self.ui.Montrer.toPlainText())
         self.operand = "Fraction"
-        #self.ui.Montrer.setText("√")
-        self.numberEntered = True
+        self.ui.Montrer.setText("1/" + str(self.number1))
         self.equalButton()
 
     def moduloButton(self):
-        self.number1 = int(self.ui.Montrer.toPlainText())
+        self.number1 = float(self.ui.Montrer.toPlainText())
         self.operand = "%"
-        #self.ui.Montrer.setText("√")
+        self.ui.Montrer.setText("%")
         self.numberEntered = True
-        self.equalButton()
 
     def equalButton(self):
-        self.number2 = int(self.ui.Montrer.toPlainText())
-        if(self.operand == "+"):
+        self.number2 = float(self.ui.Montrer.toPlainText())
+        if self.operand == "+":
             total = self.calc.Plus(self.number1, self.number2)
-        elif(self.operand == "-"):
+        elif self.operand == "-":
             total = self.calc.Minus(self.number1, self.number2)
-        elif(self.operand == "*"):
+        elif self.operand == "*":
             total = self.calc.Multiply(self.number1, self.number2)
-        elif(self.operand == "/"):
+        elif self.operand == "/":
             total = self.calc.Divise(self.number1, self.number2)
-        elif(self.operand == "rootSquare"):
+        elif self.operand == "rootSquare":
             total = self.calc.SquareRoot(self.number1)
-        elif(self.operand == "Square"):
-            total = self.calc.SquareRoot(self.number1)
-        elif(self.operand == "Fraction"):
-            total = self.calc.SquareRoot(self.number1)
+        elif self.operand == "Square":
+            total = self.calc.Square(self.number1)
+        elif self.operand == "Fraction":
+            pass
         elif(self.operand == "%"):
             total = self.calc.Modulo(self.number1, self.number2)
         self.ui.Montrer.setText(str(total))
-        #self.ui.Montrer.setText(str(int(self.number1 + self.number2)))
 
     def CEButton(self):
         self.number1 = 0
         self.number2 = 0
+        self.operand = ""
         self.ui.Montrer.clear()
 
     def clearButton(self):
@@ -125,6 +130,20 @@ class MainWindow(QMainWindow):
 
     def eraseButton(self):
         self.ui.Montrer.delete()
+
+    def dotButton(self):
+        old = self.ui.Montrer.toPlainText()
+        newText = old + "."
+        self.ui.Montrer.setText(newText)
+
+    def PositiveNegativeButton(self):
+        old = self.ui.Montrer.toPlainText()
+        if(float(old) > 0):
+            newText = "-" + old
+        else:
+            newText = str(float(old) - float(old))
+        self.ui.Montrer.setText(newText)
+
 
 
 

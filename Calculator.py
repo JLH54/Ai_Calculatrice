@@ -18,10 +18,10 @@ class Calculator:
         return number1 / number2
 
     def SquareRoot(self, number):
-        return math.SquareRoot(number)
+        return math.sqrt(number)
 
     def Square(self, number):
-        return math.Square(number)
+        return number**2
 
     def Fraction(self, number):
         return 1 / number
